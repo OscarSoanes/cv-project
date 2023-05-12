@@ -5,17 +5,18 @@ import { Edit } from "./Edit";
 export function Main() {
     const [data, setData] = useState(defaultData);
 
-    function setName(event) {
+    function changeField(event) {
         const toUpd = {...data};
-        toUpd.name = event.target.value;
+        const target = event.target.getAttribute("id");
+        toUpd[target] = event.target.value;
         
-        setData(toUpd)
+        setData(toUpd);
         console.log(data);
     }
 
     return (
         <main>
-            <Edit setName={setName}/>
+            <Edit changeField={changeField}/>
             <h2>Preview</h2>
         </main>
     )

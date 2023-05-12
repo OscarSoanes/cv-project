@@ -1,16 +1,17 @@
 import { Input } from "./Input";
 
-export function Edit({setName}) {
+export function Edit({changeField}) {
     return (
         <section>
             <h2>Edit</h2>
 
             <section>
                 <h3>Personal Details</h3>
-                <Input type="name" onChange={setName}></Input>
-                <Input type="email"></Input>
-                <Input type="phone_number"></Input>
-                <Input type="location"></Input>
+                <Input forType="name" onChange={changeField}></Input>
+                <Input forType="email" onChange={changeField}></Input>
+                <Input forType="phone" onChange={changeField}></Input>
+                <Input forType="location" onChange={changeField}></Input>
+                <Input forType="position" onChange={changeField}></Input>
             </section>
 
         </section>
