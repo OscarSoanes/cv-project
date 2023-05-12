@@ -1,6 +1,6 @@
 import { Input } from "./Input";
 
-export function Edit({changeField}) {
+export function Edit({changeField, addWorkExperience}) {
     return (
         <section>
             <h2>Edit</h2>
@@ -14,6 +14,16 @@ export function Edit({changeField}) {
                 <Input id="position" onChange={changeField} prettier="Position"></Input>
             </section>
 
+
+            <section>
+                <h3>Work Experience</h3>
+                <button onClick={addWorkExperience}>Add</button>
+            </section>
+
+            <section>
+                <h3>Education</h3>
+                <button>Add</button>
+            </section>
         </section>
     )
 }
