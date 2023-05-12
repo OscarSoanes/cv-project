@@ -1,4 +1,6 @@
 import { useState } from "react";
+import uniqid from "uniqid";
+
 import defaultData from "../default.json";
 import workExpData from "../workExp.json";
 
@@ -6,7 +8,6 @@ import { Edit } from "./Edit";
 
 export function Main() {
     const [data, setData] = useState(defaultData);
-    const [workExpLen, setWorkExpLen] = useState(0);
 
 
     function changeField(event) {
@@ -23,17 +24,16 @@ export function Main() {
         const length = data.workExperience.length
 
         const workExp = {...workExpData};
-        workExp.id = length;
+        workExp.id = uniqid();
 
         toUpd.workExperience[length] = workExp;
 
         setData(toUpd);
-        setWorkExpLen(workExpLen + 1);
     }
 
     return (
         <main>
-            <Edit changeField={changeField} addWorkExperience={addWorkExperience} workExpLen={workExpLen}/>
+            <Edit changeField={changeField} addWorkExperience={addWorkExperience} workExp={data.workExperience}/>
             <h2>Preview</h2>
         </main>
     )
