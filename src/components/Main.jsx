@@ -31,9 +31,28 @@ export function Main() {
         setData(toUpd);
     }
 
+    function changeWorkExperience(event, targetId) {
+        const toUpd = {...data};
+        const experience = toUpd.workExperience.find(exp => exp.id === targetId);
+
+        const target = event.target.getAttribute("id");
+        experience[target] = event.target.value;
+
+        setData(toUpd);
+    }
+
+    function removeWorkExperience(targetId) {
+        console.log("removed");
+        const toUpd = {...data};
+        const removedId = toUpd.workExperience.filter(exp => exp.id !== targetId);
+
+        toUpd.workExperience = removedId;
+        setData(toUpd);
+    }
+
     return (
         <main>
-            <Edit changeField={changeField} addWorkExperience={addWorkExperience} workExp={data.workExperience}/>
+            <Edit changeField={changeField} addWorkExperience={addWorkExperience} workExp={data.workExperience} changeWorkExp={changeWorkExperience} removeWorkExp={removeWorkExperience}/>
             <h2>Preview</h2>
         </main>
     )
