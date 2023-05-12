@@ -1,8 +1,8 @@
-export function Input({id, onChange, prettier}) {
+export function Input({id, onChange, prettier, parent}) {
     return (
         <>  
             <label htmlFor={id}>{prettier}: </label>
-            <input type="text" id={id} placeholder={prettier} onChange={onChange}/>
+            <input type="text" id={id} placeholder={prettier} onChange={(event) => onChange(event, parent)}/>
         </>
     )
 }
