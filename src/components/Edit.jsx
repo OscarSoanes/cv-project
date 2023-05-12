@@ -1,6 +1,7 @@
 import { Input } from "./Input";
+import { Details } from "./Details";
 
-export function Edit({changeField, addWorkExperience}) {
+export function Edit({changeField, addWorkExperience, workExp}) {
     return (
         <section>
             <h2>Edit</h2>
@@ -17,6 +18,10 @@ export function Edit({changeField, addWorkExperience}) {
 
             <section>
                 <h3>Work Experience</h3>
+                {workExp.map((experience) =>
+                    <Details key={experience.id}/>
+                )}
+
                 <button onClick={addWorkExperience}>Add</button>
             </section>
 
