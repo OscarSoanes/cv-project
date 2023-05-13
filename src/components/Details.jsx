@@ -6,7 +6,7 @@ import Picker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
 import { format } from "date-fns";
 
-export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, target}) {
+export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, target, index}) {
     const [startDate, setStartDate] = useState();
     const [endDate, setEndDate] = useState();
 
@@ -22,7 +22,8 @@ export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, 
     } 
 
     return (
-        <div>
+        <section>
+            <h4>Section {index+1}</h4>
             {inputs.map((input) => {
                 if (input.id.includes("startDate")) {
                     return (<Picker
@@ -53,7 +54,7 @@ export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, 
                 return <Input key={input.id} id={input.id} onChange={inputHandler} prettier={input.prettier} parent={dataKey} target={target}></Input>
             })}       
 
-            <button onClick={() => removeHandler(dataKey, "workExperience")}>Remove</button>
-        </div>
+            <button onClick={() => removeHandler(dataKey, target)}>Remove</button>
+        </section>
     )
 }

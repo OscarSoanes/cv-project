@@ -18,14 +18,14 @@ export function Edit({changeField, addWorkExperience, data, changeArrayField, re
 
             <section>
                 <h3>Work Experience</h3>
-                {data.workExperience.map((experience) =>
+                {data.workExperience.map((experience, index) =>
                     <Details key={experience.id} dataKey={experience.id}
                         inputs = {[
                             {id: "company", prettier: "Company"},
                             {id: "position", prettier: "Position"},
                             {id: "startDate", prettier: "Start Date"},
                             {id: "endDate", prettier: "End Date"},
-                        ]} inputHandler={changeArrayField} removeHandler={removeArrayAtID} setDate={changeDateField} target="workExperience"/>
+                        ]} inputHandler={changeArrayField} removeHandler={removeArrayAtID} setDate={changeDateField} target="workExperience" index={index}/>
                 )}
 
                 <button onClick={addWorkExperience}>Add</button>
@@ -33,14 +33,14 @@ export function Edit({changeField, addWorkExperience, data, changeArrayField, re
 
             <section>
                 <h3>Education</h3>
-                {data.education.map((experience) =>
+                {data.education.map((experience, index) =>
                     <Details key={experience.id} dataKey={experience.id}
                         inputs = {[
                             {id: "university", prettier: "University"},
                             {id: "course", prettier: "Course"},
                             {id: "startDate", prettier: "Start Date"},
                             {id: "endDate", prettier: "End Date"},
-                        ]} inputHandler={changeArrayField} removeHandler={removeArrayAtID} setDate={changeDateField} target="education"/>
+                        ]} inputHandler={changeArrayField} removeHandler={removeArrayAtID} setDate={changeDateField} target="education" index={index}/>
                 )}
                 <button onClick={addEducation}>Add</button>
             </section>
