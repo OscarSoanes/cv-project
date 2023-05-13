@@ -1,4 +1,5 @@
 import { SmallContent } from "./SmallContent"
+import { DetailedSection } from "./DetailedSection"
 
 export function Preview({data}) {
     return (
@@ -7,7 +8,7 @@ export function Preview({data}) {
 
             <section>
                 <div>
-                    <h2>{data.name}</h2>
+                    <h3>{data.name}</h3>
                     <p>{data.position}</p>
                 </div>
                 <aside>
@@ -20,7 +21,8 @@ export function Preview({data}) {
             <section>
                 <p>{data.description}</p>
             </section>
-            
+
+            <DetailedSection type="Work Experience" array={data.workExperience} />
         </section>
     )
 }
