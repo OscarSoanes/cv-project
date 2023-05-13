@@ -7,8 +7,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import { format } from "date-fns";
 
 export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, target}) {
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
+    const [startDate, setStartDate] = useState();
+    const [endDate, setEndDate] = useState();
 
     function changeDate(date, type) {
         if (type === "startDate") {
@@ -17,7 +17,7 @@ export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, 
             setEndDate(date);
         }
 
-        const formatDate = format(date, "MMM yyyy")
+        const formatDate = date ? format(date, "MMM yyyy") : ""
         setDate(dataKey, type, formatDate, target);
     } 
 
@@ -34,6 +34,7 @@ export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, 
                         showMonthYearPicker
                         showIcon
                         placeholderText="Start Date"
+                        isClearable
                         />)
                 } else if (input.id.includes("endDate")) {
                     return (<Picker
@@ -45,7 +46,8 @@ export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, 
                         dateFormat="MM/yyyy"
                         showMonthYearPicker
                         showIcon
-                        placeholderText="Start Date"
+                        placeholderText="End Date"
+                        isClearable
                         />)
                 }
                 return <Input key={input.id} id={input.id} onChange={inputHandler} prettier={input.prettier} parent={dataKey} target={target}></Input>
