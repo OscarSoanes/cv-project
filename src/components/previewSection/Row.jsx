@@ -12,6 +12,10 @@ export function Row({data}) {
                     </p>
                 </aside>
             </div>
+
+            {data.description && <div>
+                <p>{data.description}</p>
+            </div>}
         </section>
     )
 }
