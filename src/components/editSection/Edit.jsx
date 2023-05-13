@@ -24,6 +24,7 @@ export function Edit({changeField, addWorkExperience, data, changeArrayField, re
                         inputs = {[
                             {id: "company", prettier: "Company"},
                             {id: "position", prettier: "Position"},
+                            {id: "description", prettier: "Description"},
                             {id: "startDate", prettier: "Start Date"},
                             {id: "endDate", prettier: "End Date"},
                         ]} inputHandler={changeArrayField} removeHandler={removeArrayAtID} setDate={changeDateField} target="workExperience" index={index}/>
