@@ -1,7 +1,7 @@
 import { Input } from "./Input";
 import { Details } from "./Details"
 
-export function Edit({changeField, addWorkExperience, workExp, changeArrayField, removeArrayAtID, changeDateField}) {
+export function Edit({changeField, addWorkExperience, workExp, changeArrayField, removeArrayAtID, changeDateField, addEducation}) {
     return (
         <section>
             <h2>Edit</h2>
@@ -33,7 +33,7 @@ export function Edit({changeField, addWorkExperience, workExp, changeArrayField,
 
             <section>
                 <h3>Education</h3>
-                <button>Add</button>
+                <button onClick={addEducation}>Add</button>
             </section>
         </section>
     )

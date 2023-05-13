@@ -3,6 +3,7 @@ import uniqid from "uniqid";
 
 import defaultData from "../default.json";
 import workExpData from "../workExp.json";
+import educationData from "../education.json";
 
 import { Edit } from "./Edit";
 
@@ -28,6 +29,18 @@ export function Main() {
 
         toUpd.workExperience[length] = workExp;
 
+        setData(toUpd);
+    }
+
+    function addEducation() {
+        const toUpd = {...data};
+        const length = data.education.length;
+
+        const education = {...educationData};
+        education.id = uniqid();
+
+        toUpd.education[length] = education;
+        
         setData(toUpd);
     }
 
@@ -61,7 +74,8 @@ export function Main() {
     return (
         <main>
             <Edit   changeField={changeField} addWorkExperience={addWorkExperience} workExp={data.workExperience} 
-                    changeArrayField={changeArrayField} removeArrayAtID={removeArrayAtID} changeDateField={changeDateField} />
+                    changeArrayField={changeArrayField} removeArrayAtID={removeArrayAtID} changeDateField={changeDateField} 
+                    addEducation={addEducation} />
             <h2>Preview</h2>
         </main>
     )
