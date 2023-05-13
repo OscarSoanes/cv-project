@@ -73,7 +73,7 @@ export function Main() {
 
     return (
         <main>
-            <Edit   changeField={changeField} addWorkExperience={addWorkExperience} workExp={data.workExperience} 
+            <Edit   changeField={changeField} addWorkExperience={addWorkExperience} data={data} 
                     changeArrayField={changeArrayField} removeArrayAtID={removeArrayAtID} changeDateField={changeDateField} 
                     addEducation={addEducation} />
             <h2>Preview</h2>
