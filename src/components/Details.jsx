@@ -1,21 +1,24 @@
-import { Input } from "./Input"
-import Picker from "react-datepicker"
 import { useState } from "react";
+
+import { Input } from "./Input"
+
+import Picker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
+import { format } from "date-fns";
 
 export function Details({dataKey, inputs, inputHandler, removeHandler, setDate}) {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
 
     function changeDate(date, type) {
-        console.log(date);
         if (type === "startDate") {
             setStartDate(date);
         } else {
             setEndDate(date);
         }
-        
-        setDate(dataKey, type, date);
+
+        const formatDate = format(date, "MMM yyyy")
+        setDate(dataKey, type, formatDate);
     } 
 
     return (
@@ -29,6 +32,7 @@ export function Details({dataKey, inputs, inputHandler, removeHandler, setDate})
                         dateFormat="MM/yyyy"
                         showMonthYearPicker
                         showIcon
+                        placeholderText="Start Date"
                         />)
                 } else if (input.id.includes("endDate")) {
                     return (<Picker
@@ -39,6 +43,7 @@ export function Details({dataKey, inputs, inputHandler, removeHandler, setDate})
                         dateFormat="MM/yyyy"
                         showMonthYearPicker
                         showIcon
+                        placeholderText="Start Date"
                         />)
                 }
                 return <Input key={input.id} id={input.id} onChange={inputHandler} prettier={input.prettier} parent={dataKey}></Input>
