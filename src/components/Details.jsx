@@ -28,6 +28,7 @@ export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, 
                     return (<Picker
                         key={input.id}
                         selected={startDate}
+                        maxDate={new Date()}
                         onChange={(date) => changeDate(date, "startDate")}
                         dateFormat="MM/yyyy"
                         showMonthYearPicker
@@ -39,6 +40,7 @@ export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, 
                         key={input.id}
                         selected={endDate}
                         minDate={startDate}
+                        maxDate={new Date()}
                         onChange={(date) => changeDate(date, "endDate")}
                         dateFormat="MM/yyyy"
                         showMonthYearPicker
