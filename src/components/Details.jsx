@@ -1,14 +1,13 @@
 import { useState } from "react";
 
 import { Input } from "./Input"
+import { DateInput } from "./DateInput";
 
-import Picker from "react-datepicker"
-import "react-datepicker/dist/react-datepicker.css";
 import { format } from "date-fns";
 
 export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, target, index}) {
-    const [startDate, setStartDate] = useState();
-    const [endDate, setEndDate] = useState();
+    const [startDate, setStartDate] = useState(null);
+    const [endDate, setEndDate] = useState(null);
 
     function changeDate(date, type) {
         if (type === "startDate") {
@@ -26,31 +25,15 @@ export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, 
             <h4>Section {index+1}</h4>
             {inputs.map((input) => {
                 if (input.id.includes("startDate")) {
-                    return (<Picker
-                        key={input.id}
-                        selected={startDate}
-                        maxDate={new Date()}
-                        onChange={(date) => changeDate(date, "startDate")}
-                        dateFormat="MM/yyyy"
-                        showMonthYearPicker
-                        showIcon
-                        placeholderText="Start Date"
-                        isClearable
-                        />)
+                    return (<DateInput  key={input.id} selectedDate={startDate}
+                                        changeDate={changeDate} placeholderText="Start Date" id="startDate" />)
+
                 } else if (input.id.includes("endDate")) {
-                    return (<Picker
-                        key={input.id}
-                        selected={endDate}
-                        minDate={startDate}
-                        maxDate={new Date()}
-                        onChange={(date) => changeDate(date, "endDate")}
-                        dateFormat="MM/yyyy"
-                        showMonthYearPicker
-                        showIcon
-                        placeholderText="End Date"
-                        isClearable
-                        />)
+                    return (<DateInput  key={input.id} selectedDate={endDate} 
+                                        changeDate={changeDate} placeholderText="End Date" id="endDate" 
+                                        minDate={startDate} />)
                 }
+
                 return <Input key={input.id} id={input.id} onChange={inputHandler} prettier={input.prettier} parent={dataKey} target={target}></Input>
             })}       
 
