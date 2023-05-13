@@ -1,7 +1,7 @@
 import { Input } from "./Input";
 import { Details } from "./Details"
 
-export function Edit({changeField, addWorkExperience, workExp, changeArrayField, removeWorkExp, setDate}) {
+export function Edit({changeField, addWorkExperience, workExp, changeArrayField, removeArrayAtID, setDate}) {
     return (
         <section>
             <h2>Edit</h2>
@@ -25,7 +25,7 @@ export function Edit({changeField, addWorkExperience, workExp, changeArrayField,
                             {id: "position", prettier: "Position"},
                             {id: "startDate", prettier: "Start Date"},
                             {id: "endDate", prettier: "End Date"},
-                        ]} inputHandler={changeArrayField} removeHandler={removeWorkExp} setDate={setDate} target="workExperience"/>
+                        ]} inputHandler={changeArrayField} removeHandler={removeArrayAtID} setDate={setDate} target="workExperience"/>
                 )}
 
                 <button onClick={addWorkExperience}>Add</button>

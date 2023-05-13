@@ -49,7 +49,7 @@ export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, 
                 return <Input key={input.id} id={input.id} onChange={inputHandler} prettier={input.prettier} parent={dataKey} target={target}></Input>
             })}       
 
-            <button onClick={() => removeHandler(dataKey)}>Remove</button>
+            <button onClick={() => removeHandler(dataKey, "workExperience")}>Remove</button>
         </div>
     )
 }
