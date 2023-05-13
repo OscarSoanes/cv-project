@@ -13,6 +13,7 @@ export function Edit({changeField, addWorkExperience, data, changeArrayField, re
                 <Input id="phone" onChange={changeField} prettier="Phone Number"></Input>
                 <Input id="location" onChange={changeField} prettier="Location"></Input>
                 <Input id="position" onChange={changeField} prettier="Position"></Input>
+                <Input id="description" onChange={changeField} prettier="Description"></Input>
             </section>
 
 
