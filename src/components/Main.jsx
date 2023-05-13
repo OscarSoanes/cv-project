@@ -5,7 +5,7 @@ import defaultData from "../default.json";
 import workExpData from "../workExp.json";
 import educationData from "../education.json";
 
-import { Edit } from "./Edit";
+import { Edit } from "./editSection/Edit";
 
 export function Main() {
     const [data, setData] = useState(defaultData);
