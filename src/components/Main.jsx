@@ -6,6 +6,7 @@ import workExpData from "../workExp.json";
 import educationData from "../education.json";
 
 import { Edit } from "./editSection/Edit";
+import { Preview } from "./previewSection/Preview";
 
 export function Main() {
     const [data, setData] = useState(defaultData);
@@ -76,7 +77,7 @@ export function Main() {
             <Edit   changeField={changeField} addWorkExperience={addWorkExperience} data={data} 
                     changeArrayField={changeArrayField} removeArrayAtID={removeArrayAtID} changeDateField={changeDateField} 
                     addEducation={addEducation} />
-            <h2>Preview</h2>
+            <Preview data={data} />
         </main>
     )
 }
