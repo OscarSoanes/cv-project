@@ -23,6 +23,7 @@ export function Preview({data}) {
             </section>
 
             <DetailedSection type="Work Experience" array={data.workExperience} />
+            <DetailedSection type="Education" array={data.education} />
         </section>
     )
 }
