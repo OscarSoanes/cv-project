@@ -31,12 +31,12 @@ export function Main() {
         setData(toUpd);
     }
 
-    function changeWorkExperience(event, targetId) {
+    function changeArrayField(event, targetId, targetArray) {
         const toUpd = {...data};
-        const experience = toUpd.workExperience.find(exp => exp.id === targetId);
+        const field = toUpd[targetArray].find(field => field.id === targetId);
 
         const target = event.target.getAttribute("id");
-        experience[target] = event.target.value;
+        field[target] = event.target.value;
 
         setData(toUpd);
     }
@@ -60,7 +60,8 @@ export function Main() {
 
     return (
         <main>
-            <Edit changeField={changeField} addWorkExperience={addWorkExperience} workExp={data.workExperience} changeWorkExp={changeWorkExperience} removeWorkExp={removeWorkExperience} setDate={setDate}/>
+            <Edit   changeField={changeField} addWorkExperience={addWorkExperience} workExp={data.workExperience} 
+                    changeArrayField={changeArrayField} removeWorkExp={removeWorkExperience} setDate={setDate}/>
             <h2>Preview</h2>
         </main>
     )
