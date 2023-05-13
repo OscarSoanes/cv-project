@@ -1,7 +1,7 @@
 import { Input } from "./Input";
 import { Details } from "./Details"
 
-export function Edit({changeField, addWorkExperience, workExp, changeWorkExp, removeWorkExp}) {
+export function Edit({changeField, addWorkExperience, workExp, changeWorkExp, removeWorkExp, setDate}) {
     return (
         <section>
             <h2>Edit</h2>
@@ -17,7 +17,6 @@ export function Edit({changeField, addWorkExperience, workExp, changeWorkExp, re
 
 
             <section>
-                {console.log(workExp)}
                 <h3>Work Experience</h3>
                 {workExp.map((experience) =>
                     <Details key={experience.id} dataKey={experience.id}
@@ -26,7 +25,7 @@ export function Edit({changeField, addWorkExperience, workExp, changeWorkExp, re
                             {id: "position", prettier: "Position"},
                             {id: "startDate", prettier: "Start Date"},
                             {id: "endDate", prettier: "End Date"},
-                        ]} inputHandler={changeWorkExp} removeHandler={removeWorkExp}/>
+                        ]} inputHandler={changeWorkExp} removeHandler={removeWorkExp} setDate={setDate}/>
                 )}
 
                 <button onClick={addWorkExperience}>Add</button>
