@@ -49,9 +49,9 @@ export function Main() {
         setData(toUpd);
     }
 
-    function setDate(targetId, type, value, exp = "workExperience") {
+    function changeDateField(targetId, type, value, targetArray) {
         const toUpd = {...data};
-        const target = toUpd.workExperience.find(exp => exp.id === targetId);
+        const target = toUpd[targetArray].find(exp => exp.id === targetId);
 
         target[type] = value;
         setData(toUpd);
@@ -61,7 +61,7 @@ export function Main() {
     return (
         <main>
             <Edit   changeField={changeField} addWorkExperience={addWorkExperience} workExp={data.workExperience} 
-                    changeArrayField={changeArrayField} removeArrayAtID={removeArrayAtID} setDate={setDate} />
+                    changeArrayField={changeArrayField} removeArrayAtID={removeArrayAtID} changeDateField={changeDateField} />
             <h2>Preview</h2>
         </main>
     )
