@@ -6,7 +6,7 @@ import Picker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
 import { format } from "date-fns";
 
-export function Details({dataKey, inputs, inputHandler, removeHandler, setDate}) {
+export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, target}) {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
 
@@ -18,7 +18,7 @@ export function Details({dataKey, inputs, inputHandler, removeHandler, setDate})
         }
 
         const formatDate = format(date, "MMM yyyy")
-        setDate(dataKey, type, formatDate);
+        setDate(dataKey, type, formatDate, target);
     } 
 
     return (
@@ -46,7 +46,7 @@ export function Details({dataKey, inputs, inputHandler, removeHandler, setDate})
                         placeholderText="Start Date"
                         />)
                 }
-                return <Input key={input.id} id={input.id} onChange={inputHandler} prettier={input.prettier} parent={dataKey}></Input>
+                return <Input key={input.id} id={input.id} onChange={inputHandler} prettier={input.prettier} parent={dataKey} target={target}></Input>
             })}       
 
             <button onClick={() => removeHandler(dataKey)}>Remove</button>
