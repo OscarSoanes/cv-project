@@ -6,6 +6,7 @@ import { ButtonPrimary } from "../editSection/ButtonPrimary";
 
 import html2PDF from 'jspdf-html2canvas';
 
+
 export function Preview({data}) {
 
     async function saveToPDF() {
@@ -15,7 +16,7 @@ export function Preview({data}) {
             jsPDF: {
               format: 'a4',
             },
-            imageType: 'image/jpeg',
+            imageType: 'image/png',
             output: './pdf/cv.pdf'
           });
     }
@@ -24,7 +25,7 @@ export function Preview({data}) {
         <section>
             <h2 className="mt-3 mb-3 text-2xl font-normal">Preview</h2>
 
-            <div className="bg-white p-6 px-[10%] border-black border border-solid shadow shadow-gray-400 aspect-[1/1.414]" id="page">
+            <div className="bg-white p-6 px-[10%] border-black border border-solid shadow shadow-gray-400 aspect-[1/1.412]" id="page">
                 <section className="border-b-4 border-solid border-teal-400 header pb-3 min-h-[11vh]">
                     <div>
                         <h3 className="font-bold text-teal-800 text-[4vw] lg:text-[3vw] align-top 2xl:text-[2vw]">{data.name}</h3>
