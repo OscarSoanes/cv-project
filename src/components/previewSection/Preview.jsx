@@ -22,7 +22,7 @@ export function Preview({data}) {
                 </section>
 
                 <section className="my-4 text-[2vw] lg:text-[1.25vw] 2xl:text-[1vw]">
-                    <p>{data.description}</p>
+                    <p className="break-words">{data.description}</p>
                 </section>
 
                 {data.workExperience.length !== 0 && <DetailedSection type="Work Experience" array={data.workExperience} />}

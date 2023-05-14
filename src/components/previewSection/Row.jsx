@@ -16,7 +16,7 @@ export function Row({data}) {
             </div>
 
             {data.description && <div>
-                <p>{data.description}</p>
+                <p className="break-words">{data.description}</p>
             </div>}
         </section>
     )
