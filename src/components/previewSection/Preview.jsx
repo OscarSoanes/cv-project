@@ -14,10 +14,10 @@ export function Preview({data}) {
                         <h3 className="font-bold text-teal-800 text-[4vw] lg:text-[3vw] align-top 2xl:text-[2vw]">{data.name}</h3>
                         <p className="font-bold text-teal-800 text-[3vw] lg:text-[2vw] 2xl:text-[1.25vw]">{data.position}</p>
                     </div>
-                    <aside className="grid justify-items-end content-center">
-                        <SmallContent value={data.phone} icon={<MdPhone className="w-[1.5vw] lg:w-[1vw] 2xl:text-[0.75vw]"/>}/>
-                        <SmallContent value={data.email} icon={<MdEmail className="w-[1.5vw] lg:w-[1vw] 2xl:text-[0.75vw]"/>}/>
-                        <SmallContent value={data.location} icon={<MdLocationPin className="w-[1.5vw] lg:w-[1vw] 2xl:text-[0.75vw]"/>}/>
+                    <aside className="grid justify-items-end content-center gap-1">
+                        {data.phone !== "" && <SmallContent value={data.phone} icon={<MdPhone className="w-[1.5vw] lg:w-[1vw] 2xl:text-[0.75vw]"/>}/>}
+                        {data.email !== "" && <SmallContent value={data.email} icon={<MdEmail className="w-[1.5vw] lg:w-[1vw] 2xl:text-[0.75vw]"/>}/>}
+                        {data.location !== "" && <SmallContent value={data.location} icon={<MdLocationPin className="w-[1.5vw] lg:w-[1vw] 2xl:text-[0.75vw]"/>}/>}
                     </aside>
                 </section>
 
@@ -25,8 +25,8 @@ export function Preview({data}) {
                     <p>{data.description}</p>
                 </section>
 
-                <DetailedSection type="Work Experience" array={data.workExperience} />
-                <DetailedSection type="Education" array={data.education} />
+                {data.workExperience.length !== 0 && <DetailedSection type="Work Experience" array={data.workExperience} />}
+                {data.workExperience.length !== 0 && <DetailedSection type="Education" array={data.education} />}
             </div>
         </section>
     )
