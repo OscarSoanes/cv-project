@@ -5,7 +5,6 @@ import { ButtonPrimary } from "./ButtonPrimary";
 
 import PhoneInput from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
-import { useState } from "react";
 
 export function Edit({changeField, addWorkExperience, data, changeArrayField, removeArrayAtID, changeDateField, addEducation, changePhoneNumber}) {  
     return (
