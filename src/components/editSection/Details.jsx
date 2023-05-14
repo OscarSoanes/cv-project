@@ -5,6 +5,7 @@ import { DateInput } from "./DateInput";
 
 import { format } from "date-fns";
 import { ButtonSecondary } from "./ButtonSecondary";
+import { TextAreaInput } from "./TextAreaInput";
 
 export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, target, index}) {
     const [startDate, setStartDate] = useState(null);
@@ -33,6 +34,8 @@ export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, 
                     return (<DateInput  key={input.id} selectedDate={endDate} 
                                         changeDate={changeDate} placeholderText="End Date" id="endDate" 
                                         minDate={startDate} />)
+                } else if (input.id.includes("description")) {
+                    return <TextAreaInput key={input.id} id={input.id} onChange={inputHandler} prettier={input.prettier} parent={dataKey} target={target}></TextAreaInput>
                 }
 
                 return <Input key={input.id} id={input.id} onChange={inputHandler} prettier={input.prettier} parent={dataKey} target={target}></Input>
