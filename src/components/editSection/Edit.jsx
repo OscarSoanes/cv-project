@@ -16,13 +16,15 @@ export function Edit({changeField, addWorkExperience, data, changeArrayField, re
                 <h3 className="text-xl">Personal Details</h3>
                 <Input id="name" onChange={changeField} prettier="Name"></Input>
                 <Input id="email" onChange={changeField} prettier="Email"></Input>
-                {/* <Input id="phone" onChange={changeField} prettier="Phone Number"></Input> */}
-                <PhoneInput
-                    international
-                    placeholder="Enter phone number"
-                    value={data.phone}
-                    onChange={changePhoneNumber}
-                    className="input bg-white"/>
+                    {
+                        <PhoneInput
+                        international
+                        defaultCountry="GB"
+                        placeholder="Enter phone number"
+                        value={data.phone}
+                        onChange={changePhoneNumber}
+                        className="input bg-white"/>
+                    }
                 <Input id="location" onChange={changeField} prettier="Location"></Input>
                 <Input id="position" onChange={changeField} prettier="Position"></Input>
                 <TextAreaInput id="description" onChange={changeField} prettier="Description" rows={"4"}></TextAreaInput>
