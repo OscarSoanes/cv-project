@@ -35,7 +35,7 @@ export function Edit({changeField, addWorkExperience, data, changeArrayField, re
             </section>
 
             <section>
-                <h3>Education</h3>
+                <h3 className="text-xl">Education</h3>
                 {data.education.map((experience, index) =>
                     <Details key={experience.id} dataKey={experience.id}
                         inputs = {[
