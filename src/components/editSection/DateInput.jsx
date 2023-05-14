@@ -6,18 +6,18 @@ export function DateInput({selectedDate, changeDate, placeholderText, id, minDat
     return (
         <>  
             <label>
-                <span>{placeholderText}</span>
+                <span className="hidden">{placeholderText}</span>
 
                 <DatePicker
                     selected={selectedDate}
                     minDate={minDate}
                     maxDate={new Date()}
                     onChange={(date) => changeDate(date, id)}
-                    dateFormat="MM/yyyy"
+                    dateFormat="MMMM yyyy"
                     showMonthYearPicker
-                    showIcon
                     placeholderText={placeholderText}
                     isClearable
+                    className="input"
                 />
             </label>
         </>
