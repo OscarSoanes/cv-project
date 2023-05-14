@@ -28,3 +28,9 @@ html, body {
         @apply rounded-full p-1 font-normal w-24 mt-1;
     }
 }
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    gap: 0.5rem;
+}
