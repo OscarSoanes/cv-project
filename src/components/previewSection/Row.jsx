@@ -5,11 +5,13 @@ export function Row({data}) {
                 <h4 className="font-bold text-[2vw] lg:text-[1.5vw] 2xl:text-[1vw]">{data.position || data.course} </h4>
 
                 <aside className="flex gap-1">
-                    <p>{data.company || data.university} |</p>
-                    <p className="font-bold">
-                        {data.startDate + " - "}
-                        {data.endDate === "" ? "Present" : data.endDate}
-                    </p>
+                    <p>{data.company || data.university}</p>
+                    {(data.startDate !== "" || data.endDate !== "") && (
+                        <p className="font-bold">
+                            | 
+                            {" " + data.startDate + " - "}
+                            {data.endDate === "" ? "Present" : data.endDate}
+                        </p> )}
                 </aside>
             </div>
 
