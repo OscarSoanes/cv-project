@@ -9,8 +9,8 @@ export function Preview({data}) {
             <div className="bg-white p-6 px-[10%] border-black border border-solid shadow shadow-gray-400 aspect-[1/1.414]">
                 <section className="border-b-4 border-solid border-teal-400 header">
                     <div>
-                        <h3 className="font-bold text-teal-800 sm:text-2xl">{data.name}</h3>
-                        <p className="font-bold text-teal-800 sm:text-2xl">{data.position}</p>
+                        <h3 className="font-bold text-teal-800 text-[4vw] lg:text-[3vw]">{data.name}</h3>
+                        <p className="font-bold text-teal-800 text-[3vw] lg:text-[2vw]">{data.position}</p>
                     </div>
                     <aside>
                         <SmallContent value={data.phone}/>
