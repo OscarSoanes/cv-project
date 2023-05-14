@@ -8,6 +8,8 @@ import educationData from "../education.json";
 import { Edit } from "./editSection/Edit";
 import { Preview } from "./previewSection/Preview";
 
+import { formatPhoneNumberIntl } from 'react-phone-number-input'
+
 export function Main() {
     const [data, setData] = useState(defaultData);
 
@@ -23,6 +25,7 @@ export function Main() {
 
     function changePhoneNumber(value) {
         const toUpd = {...data};
+        value = formatPhoneNumberIntl(value);
         toUpd.phone = value;
 
         setData(toUpd);
