@@ -4,7 +4,7 @@ import { ButtonPrimary } from "./ButtonPrimary";
 
 export function Edit({changeField, addWorkExperience, data, changeArrayField, removeArrayAtID, changeDateField, addEducation}) {
     return (
-        <section className="border-solid border-2 border-sky-300 rounded-lg shadow-md shadow-slate-400 p-4 font-light">
+        <section className="border-solid border-2 border-sky-400 rounded-lg shadow-md shadow-slate-400 p-4 font-light bg-slate-100">
             <h2 className="mb-3 text-2xl font-normal">Edit</h2>
 
             <section className="my-4">

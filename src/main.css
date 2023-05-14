@@ -7,7 +7,8 @@ html, body {
 }
 
 #root {
-    height: 100%;
+    min-height: 100%;
+    background-color: #f0f9f4;
 }
 
 .page {
@@ -24,6 +25,6 @@ html, body {
     }
 
     .button {
-        @apply rounded-full p-1 font-normal w-24 mt-4;
+        @apply rounded-full p-1 font-normal w-24 mt-1;
     }
 }
