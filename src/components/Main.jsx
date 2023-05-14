@@ -21,6 +21,13 @@ export function Main() {
         console.log(data);
     }
 
+    function changePhoneNumber(value) {
+        const toUpd = {...data};
+        toUpd.phone = value;
+
+        setData(toUpd);
+    }
+
     function addWorkExperience() {
         const toUpd = {...data};
         const length = data.workExperience.length
@@ -76,7 +83,7 @@ export function Main() {
         <main className="my-3 grid gap-16 lg:grid-cols-2">
             <Edit   changeField={changeField} addWorkExperience={addWorkExperience} data={data} 
                     changeArrayField={changeArrayField} removeArrayAtID={removeArrayAtID} changeDateField={changeDateField} 
-                    addEducation={addEducation} />
+                    addEducation={addEducation} changePhoneNumber={changePhoneNumber}/>
             <Preview data={data} />
         </main>
     )
