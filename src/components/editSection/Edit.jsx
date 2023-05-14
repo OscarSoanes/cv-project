@@ -1,5 +1,6 @@
 import { Input } from "./Input";
 import { Details } from "./Details"
+import { ButtonPrimary } from "./ButtonPrimary";
 
 export function Edit({changeField, addWorkExperience, data, changeArrayField, removeArrayAtID, changeDateField, addEducation}) {
     return (
@@ -30,7 +31,7 @@ export function Edit({changeField, addWorkExperience, data, changeArrayField, re
                         ]} inputHandler={changeArrayField} removeHandler={removeArrayAtID} setDate={changeDateField} target="workExperience" index={index}/>
                 )}
 
-                <button onClick={addWorkExperience}>Add</button>
+                <ButtonPrimary onClick={addWorkExperience} text="Add"/>
             </section>
 
             <section>
@@ -44,7 +45,7 @@ export function Edit({changeField, addWorkExperience, data, changeArrayField, re
                             {id: "endDate", prettier: "End Date"},
                         ]} inputHandler={changeArrayField} removeHandler={removeArrayAtID} setDate={changeDateField} target="education" index={index}/>
                 )}
-                <button onClick={addEducation}>Add</button>
+                <ButtonPrimary onClick={addEducation} text="Add"/>
             </section>
         </section>
     )

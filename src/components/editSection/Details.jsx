@@ -4,6 +4,7 @@ import { Input } from "./Input"
 import { DateInput } from "./DateInput";
 
 import { format } from "date-fns";
+import { ButtonSecondary } from "./ButtonSecondary";
 
 export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, target, index}) {
     const [startDate, setStartDate] = useState(null);
@@ -37,7 +38,7 @@ export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, 
                 return <Input key={input.id} id={input.id} onChange={inputHandler} prettier={input.prettier} parent={dataKey} target={target}></Input>
             })}       
 
-            <button onClick={() => removeHandler(dataKey, target)}>Remove</button>
+            <ButtonSecondary onClick={() => removeHandler(dataKey, target)} text="Remove" />
         </section>
     )
 }
