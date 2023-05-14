@@ -22,7 +22,7 @@ export function Details({dataKey, inputs, inputHandler, removeHandler, setDate, 
     } 
 
     return (
-        <section>
+        <section className="my-4">
             <h4>Section {index+1}</h4>
             {inputs.map((input) => {
                 if (input.id.includes("startDate")) {
