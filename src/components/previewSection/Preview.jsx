@@ -26,7 +26,7 @@ export function Preview({data}) {
                 </section>
 
                 {data.workExperience.length !== 0 && <DetailedSection type="Work Experience" array={data.workExperience} />}
-                {data.workExperience.length !== 0 && <DetailedSection type="Education" array={data.education} />}
+                {data.education.length !== 0 && <DetailedSection type="Education" array={data.education} />}
             </div>
         </section>
     )
