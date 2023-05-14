@@ -3,11 +3,11 @@ import { Details } from "./Details"
 
 export function Edit({changeField, addWorkExperience, data, changeArrayField, removeArrayAtID, changeDateField, addEducation}) {
     return (
-        <section>
-            <h2>Edit</h2>
+        <section className="border-solid border-2 border-sky-300 rounded-lg shadow-md shadow-slate-400 p-4 font-light">
+            <h2 className="mb-3 text-2xl font-normal">Edit</h2>
 
-            <section>
-                <h3>Personal Details</h3>
+            <section className="my-4">
+                <h3 className="text-xl">Personal Details</h3>
                 <Input id="name" onChange={changeField} prettier="Name"></Input>
                 <Input id="email" onChange={changeField} prettier="Email"></Input>
                 <Input id="phone" onChange={changeField} prettier="Phone Number"></Input>
@@ -17,8 +17,8 @@ export function Edit({changeField, addWorkExperience, data, changeArrayField, re
             </section>
 
 
-            <section>
-                <h3>Work Experience</h3>
+            <section className="my-4">
+                <h3 className="text-xl">Work Experience</h3>
                 {data.workExperience.map((experience, index) =>
                     <Details key={experience.id} dataKey={experience.id}
                         inputs = {[
