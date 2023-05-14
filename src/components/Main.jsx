@@ -73,7 +73,7 @@ export function Main() {
     }
 
     return (
-        <main>
+        <main className="my-3 grid gap-16 lg:grid-cols-2">
             <Edit   changeField={changeField} addWorkExperience={addWorkExperience} data={data} 
                     changeArrayField={changeArrayField} removeArrayAtID={removeArrayAtID} changeDateField={changeDateField} 
                     addEducation={addEducation} />
