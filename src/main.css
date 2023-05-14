@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+}
+
+.page {
+    width: min(125ch, calc(100% - 4rem));
+    margin-inline: auto;
+
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+}
